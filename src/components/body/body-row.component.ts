@@ -208,15 +208,16 @@ export class DataTableBodyRowComponent implements DoCheck {
     }
   }
 
-  @HostListener('mouseenter', ['$event'])
-  onMouseenter(event: any): void {
-    this.activate.emit({
-        type: 'mouseenter',
-        event,
-        row: this.row,
-        rowElement: this._element
-      });
-  }
+  // FIXME Buggy AF
+  // @HostListener('mouseenter', ['$event'])
+  // onMouseenter(event: any): void {
+  //   this.activate.emit({
+  //       type: 'mouseenter',
+  //       event,
+  //       row: this.row,
+  //       rowElement: this._element
+  //     });
+  // }
 
   recalculateColumns(val: any[] = this.columns): void {
     this._columns = val;

@@ -163,14 +163,16 @@ var DataTableBodyRowComponent = /** @class */ (function () {
             });
         }
     };
-    DataTableBodyRowComponent.prototype.onMouseenter = function (event) {
-        this.activate.emit({
-            type: 'mouseenter',
-            event: event,
-            row: this.row,
-            rowElement: this._element
-        });
-    };
+    // FIXME Buggy AF
+    // @HostListener('mouseenter', ['$event'])
+    // onMouseenter(event: any): void {
+    //   this.activate.emit({
+    //       type: 'mouseenter',
+    //       event,
+    //       row: this.row,
+    //       rowElement: this._element
+    //     });
+    // }
     DataTableBodyRowComponent.prototype.recalculateColumns = function (val) {
         if (val === void 0) { val = this.columns; }
         this._columns = val;
@@ -257,12 +259,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], DataTableBodyRowComponent.prototype, "onKeyDown", null);
-    __decorate([
-        core_1.HostListener('mouseenter', ['$event']),
-        __metadata("design:type", Function),
-        __metadata("design:paramtypes", [Object]),
-        __metadata("design:returntype", void 0)
-    ], DataTableBodyRowComponent.prototype, "onMouseenter", null);
     DataTableBodyRowComponent = __decorate([
         core_1.Component({
             selector: 'datatable-body-row',
